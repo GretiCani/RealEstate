@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Property</title>
+    </h:head>
+    <h:body>
+        <ui:insert name="header" >
+            <ui:include src="header.xhtml" />
+        </ui:insert>
+        <f:view>
+            <h:form id="mainList"  > 
+                <p:growl id="growl" showDetail="true" life="3000"  />
+                <p:dataTable id="userList"  value="#{propertyRequestBean.propertyRequestList}" var="item">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{item.id}" />
+                    </p:column>
+                    <p:column headerText="Property Category">
+                        <h:outputText value="#{item.propertyId.category}" />
+                    </p:column>
+                    <p:column headerText="City">
+                        <h:outputText value="#{item.propertyId.city}" />
+                    </p:column>
+                    <p:column headerText="Address">
+                        <h:outputText value="#{item.propertyId.address}" />
+                    </p:column>
+                    <p:column headerText="Price">
+                        <h:outputText value="#{item.propertyId.price}" />
+                    </p:column>
+                    <p:column headerText="Potential Buyer">
+                        <h:outputText value="#{item.buyerId.email}" />
+                    </p:column>
+                    
+                    <p:column headerText="Proccess Sale">
+                        <p:commandLink id="edit" value="Proccess" ajax="false" 
+                                       action="#{propertyRequestBean.proccessSales(item.id)}">
+                        </p:commandLink>
+                        
+                    </p:column>
+                </p:dataTable>
+            </h:form> 
+        </f:view>
+
+    </h:body>
+</html>
+

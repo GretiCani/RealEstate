@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:insert name="header" >
+            <ui:include src="header.xhtml" />
+        </ui:insert>
+        <f:view>
+            <h:form id="mainList"  > 
+                <p:growl id="growl" showDetail="true" life="3000"  />
+                <p:dataTable id="propertyList"  value="#{propertyBean.propertyList}" var="item">
+                    <f:facet name="header">
+                        List of property
+                    </f:facet>
+                    <p:column headerText="Category">
+                        <h:outputText value="#{item.category}" />
+                    </p:column>
+                    <p:column headerText="City">
+                        <h:outputText value="#{item.city}" />
+                    </p:column>
+                    <p:column headerText="Address">
+                        <h:outputText value="#{item.address}" />
+                    </p:column>
+                    <p:column headerText="Price">
+                        <h:outputText value="#{item.price}" />
+                    </p:column>
+                    <p:column headerText="Status">
+                        <h:outputText value="#{item.status}" />
+                    </p:column>
+                </p:dataTable>
+            </h:form> 
+        </f:view>
+        
+        <f:view>
+            <h:form  > 
+                <p:growl id="growl" showDetail="true" life="3000"  />
+                <p:dataTable id="userList"  value="#{userBean.sellerList}" var="item">
+                    <f:facet name="header">List of sellers</f:facet>
+                    <p:column headerText="Email">
+                        <h:outputText value="#{item.email}" />
+                    </p:column>
+                    <p:column headerText="Name">
+                        <h:outputText value="#{item.name}" />
+                    </p:column>
+                    <p:column headerText="Surname">
+                        <h:outputText value="#{item.surname}" />
+                    </p:column>
+                    <p:column headerText="Phone Number">
+                        <h:outputText value="#{item.phoneNumber}" />
+                    </p:column>
+                    <p:column headerText="User Role">
+                        <h:outputText value="#{item.roleId.roleName}" />
+                    </p:column>
+                </p:dataTable>
+            </h:form> 
+        </f:view>
+        
+        <f:view>
+            <h:form  > 
+                <p:growl id="growl" showDetail="true" life="3000"  />
+                <p:dataTable id="userList"  value="#{userBean.buyerList}" var="item">
+                    <f:facet name="header">List of buyers</f:facet>
+                    <p:column headerText="Email">
+                        <h:outputText value="#{item.email}" />
+                    </p:column>
+                    <p:column headerText="Name">
+                        <h:outputText value="#{item.name}" />
+                    </p:column>
+                    <p:column headerText="Surname">
+                        <h:outputText value="#{item.surname}" />
+                    </p:column>
+                    <p:column headerText="Phone Number">
+                        <h:outputText value="#{item.phoneNumber}" />
+                    </p:column>
+                    <p:column headerText="User Role">
+                        <h:outputText value="#{item.roleId.roleName}" />
+                    </p:column>
+                </p:dataTable>
+            </h:form> 
+        </f:view>
+
+
+    </h:body>
+</html>
+

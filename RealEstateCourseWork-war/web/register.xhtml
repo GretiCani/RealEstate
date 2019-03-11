@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" > 
+
+    <h:head>
+        <title>Register</title>
+
+    </h:head>
+
+    <h:body>
+
+        <ui:insert name="header" >
+                     <ui:include src="header.xhtml" />
+             </ui:insert>
+
+        <div style="padding-left:450px; padding-top: 100px; padding-right:430px">
+
+            <h:form id="registerForm">
+                <p:growl id="growl"  showDetail="true" life="3000" />
+                <p:panel id="basic" header="Enter Your Information"  style="margin-bottom:20px">
+                    
+                    <h:panelGrid  columns="2" cellpadding="5" >
+
+                        <h:outputLabel for="name" value="Name:" style="font-weight:bold" />
+                        <p:inputText id="name" value="#{registerBean.user.name}" required="true" label="Name" />
+
+                        <h:outputLabel for="surname" value="Surname:" style="font-weight:bold" />
+                        <p:inputText id="surname" value="#{registerBean.user.surname}" required="true" label="Surname" />
+
+                        <h:outputLabel for="phoneNumber" value="Phone Number:" style="font-weight:bold" />
+                        <p:inputMask id="phoneNumber" value="#{registerBean.user.phoneNumber}" required="true" label="Phone Number" mask="(999) 999-9999" />
+
+                        <h:outputLabel for="email" value="Email:" style="font-weight:bold"/>
+                        <p:inputText id="email" value="#{registerBean.user.email}" required="true" label="Email" >
+                            <f:validator validatorId="emailValidator" />
+                        </p:inputText>
+
+                        <h:outputLabel for="password" value="Your password: *"  style="font-weight:bold"/>
+                        <p:password id="password" value="#{registerBean.user.password}" match="confirmpassword" 
+                                    label="Password" required="true" feedback="true"/>
+
+                        <h:outputLabel for="confirmpassword" value="Your password: *" style="font-weight:bold" />
+                        <p:password id="confirmpassword" value="#{registerBean.user.password}" 
+                                    label="Confirm Password" required="true"/>
+
+                        <h:outputText value="Register as:" style="font-weight:bold" />
+
+                        <p:selectOneButton value="#{registerBean.userRole}">
+                            <f:selectItem itemLabel="SELLER" itemValue="seller" />
+                            <f:selectItem itemLabel="BUYER" itemValue="buyer" />
+                        </p:selectOneButton>
+
+                        <f:facet name="footer">
+                        <p:commandButton style="width: 420px" value="Register" action="#{registerBean.register()}" update="registerForm" />
+                        </f:facet>  
+                         
+                        <p:watermark value="Enter your name" for="name"  />
+                        <p:watermark value="Enter your surname" for="surname" />
+                        <p:watermark value="Enter your phone nr" for="phoneNumber" />
+                        <p:watermark value="Enter your email" for="email" />
+                        <p:watermark value="Enter your password" for="password" />
+                        <p:watermark value="Confirm your password" for="confirmpassword" />
+
+                    </h:panelGrid>
+                   
+                </p:panel>
+            </h:form>    
+        </div>
+
+    </h:body>
+</html>

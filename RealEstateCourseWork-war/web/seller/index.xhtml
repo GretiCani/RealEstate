@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <ui:insert name="header" >
+                     <ui:include src="header.xhtml" />
+             </ui:insert>
+        <f:view>
+            <h:form id="mainList"  > 
+                <p:growl id="growl" showDetail="true" life="3000"  />
+                <p:dataTable id="propertyList"  value="#{propertyBean.currentUserProperties}" var="item">
+                    <f:facet name="header">Your property List</f:facet>
+                    <p:column headerText="Category">
+                        <h:outputText value="#{item.category}" />
+                    </p:column>
+                    <p:column headerText="City">
+                        <h:outputText value="#{item.city}" />
+                    </p:column>
+                    <p:column headerText="Address">
+                        <h:outputText value="#{item.address}" />
+                    </p:column>
+                    <p:column headerText="Price">
+                        <h:outputText value="#{item.price}" />
+                    </p:column>
+                    <p:column headerText="Status">
+                        <h:outputText value="#{item.status}" />
+                    </p:column>
+                    <p:column headerText="Action">
+                        <p:commandLink id="view" value="View" ajax="false" 
+                                       action="#{propertyBean.viewProperty(item.id)}" />
+                    </p:column>
+                </p:dataTable>
+            </h:form> 
+        </f:view>
+
+                           
+                        
+    </h:body>
+</html>
+

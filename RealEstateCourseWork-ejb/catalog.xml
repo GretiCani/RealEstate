@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/SalesWebService/SalesWebService?wsdl" uri="src/conf/xml-resources/web-service-references/SalesWebService/wsdl/localhost_8080/SalesWebService/SalesWebService.wsdl"/>
+    <system systemId="http://localhost:8080/SalesWebService/SalesWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/SalesWebService/wsdl/localhost_8080/SalesWebService/SalesWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/PropertyWebService/PropertyWebService?wsdl" uri="src/conf/xml-resources/web-service-references/PropertyWebService/wsdl/localhost_8080/PropertyWebService/PropertyWebService.wsdl"/>
+    <system systemId="http://localhost:8080/PropertyWebService/PropertyWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/PropertyWebService/wsdl/localhost_8080/PropertyWebService/PropertyWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/RequestsForPropertyViewingWebService/RequestsForPropertyViewingWebService?wsdl" uri="src/conf/xml-resources/web-service-references/RequestsForPropertyViewingWebService/wsdl/localhost_8080/RequestsForPropertyViewingWebService/RequestsForPropertyViewingWebService.wsdl"/>
+    <system systemId="http://localhost:8080/RequestsForPropertyViewingWebService/RequestsForPropertyViewingWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/RequestsForPropertyViewingWebService/wsdl/localhost_8080/RequestsForPropertyViewingWebService/RequestsForPropertyViewingWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/UserWebService/UserWebService?wsdl" uri="src/conf/xml-resources/web-service-references/UserWebService/wsdl/localhost_8080/UserWebService/UserWebService.wsdl"/>
+    <system systemId="http://localhost:8080/UserWebService/UserWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/UserWebService/wsdl/localhost_8080/UserWebService/UserWebService.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>User List</title>
+    </h:head>
+    <h:body>
+       
+        <f:view>
+            <h:form id="mainList"  > 
+                <p:growl id="growl" showDetail="true" life="3000"  />
+                <p:dataTable id="userList"  value="#{userBean.userList}" var="item">
+                    <p:column headerText="Email">
+                        <h:outputText value="#{item.email}" />
+                    </p:column>
+                    <p:column headerText="Name">
+                        <h:outputText value="#{item.name}" />
+                    </p:column>
+                    <p:column headerText="Surname">
+                        <h:outputText value="#{item.surname}" />
+                    </p:column>
+                    <p:column headerText="Phone Number">
+                        <h:outputText value="#{item.phoneNumber}" />
+                    </p:column>
+                    <p:column headerText="User Role">
+                        <h:outputText value="#{item.roleId.roleName}" />
+                    </p:column>
+                    <p:column headerText="Action">
+                    <p:commandLink id="delete" value="delete|" ajax="false" 
+                                   action="#{userBean.deleteSelectedUser(item)}" update=":userList">
+                    </p:commandLink>
+                    <p:commandLink id="edit" value="edit" ajax="false" 
+                                   action="#{userBean.viewSelectedUser(item.email)}">|
+                    </p:commandLink>
+                    </p:column>
+                </p:dataTable>
+           </h:form> 
+        </f:view>
+
+    </h:body>
+</html>
+

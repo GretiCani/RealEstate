@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="SalesService">
+      <implementation-class>al.unyt.entapp.service.SalesService</implementation-class>
+    </service>
+    <service name="RequestPropertyService">
+      <implementation-class>al.unyt.entapp.service.RequestPropertyService</implementation-class>
+    </service>
+    <service name="PropertyService">
+      <implementation-class>al.unyt.entapp.service.PropertyService</implementation-class>
+    </service>
+    <service name="UserService">
+      <implementation-class>al.unyt.entapp.service.UserService</implementation-class>
+    </service>
+  </services>
+  <clients>
+  </clients>
+</jax-ws>
